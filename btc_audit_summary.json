@@ -1,0 +1,171 @@
+{
+  "coin": "BTCUSDT",
+  "durationSec": 35,
+  "liveFeedsVerified": {
+    "binanceFutures_fstream": {
+      "bboUpdates": 2248,
+      "depth20_100msUpdates": 319,
+      "trades": 135,
+      "markPrice": 80538.72844203,
+      "indexPrice": 80573.23130435,
+      "fundingRate": 0.0000991
+    },
+    "binanceSpot": {
+      "depth20_100msUpdates": 344,
+      "aggTrades": 115
+    },
+    "okxPerpSwap": {
+      "books5Updates": 308,
+      "trades": 60
+    }
+  },
+  "compressionRatiosClarified": {
+    "rawAllBookPackets_to_DnaEvents": 153.3,
+    "depth100msPackets_to_DnaEvents": 46.2,
+    "active500msNaiveTicks_to_DnaEvents": 3.29,
+    "totalBookPackets": 3219,
+    "totalDepth100msPackets": 971,
+    "naiveActiveTicks": 69,
+    "cleanDnaEvents": 21
+  },
+  "effectiveSampleSizeDefinitions": {
+    "horizonSec": 10,
+    "nRaw500msWindows": 49,
+    "nUniquenessNonOverlap": 2.45,
+    "lag1Autocorr_500msOverlapping": 0,
+    "lag1Autocorr_10sNonOverlapping": 0,
+    "nEff_AR1_Adjusted": 2.45
+  },
+  "empirical3StateDistribution10s": {
+    "downPct": 0,
+    "flatPct": 100,
+    "upPct": 0
+  },
+  "walkForwardBaseRateComparison_3StateBrier": {
+    "note": "Lower Multinomial Brier is better. Strictly prequential (updated only after t+10s resolves, concurrency-weighted).",
+    "model1_FixedPrior_25_50_25": 0.375,
+    "model2_ShortWindowEWMA": 0.1811,
+    "model3_LongWindowShrunk": 0.3421,
+    "model4_RegimeConditionedShrunk": 0.415
+  },
+  "sampleDnaEvents": [
+    {
+      "t": 1793208566397,
+      "iso": "2026-10-28T17:29:26.397Z",
+      "venue": "BIN_FUT",
+      "type": "BOOK_TILT",
+      "side": 1,
+      "mid": 80538.65,
+      "detail": {
+        "obi": 0.612
+      }
+    },
+    {
+      "t": 1793208567867,
+      "iso": "2026-10-28T17:29:27.867Z",
+      "venue": "BIN_FUT",
+      "type": "FLOW_BURST",
+      "side": -1,
+      "mid": 80538.65,
+      "detail": {
+        "notionalUsd": 10389
+      }
+    },
+    {
+      "t": 1793208568899,
+      "iso": "2026-10-28T17:29:28.899Z",
+      "venue": "BIN_FUT",
+      "type": "FLOW_EXHAUST",
+      "side": -1,
+      "mid": 80538.65,
+      "detail": {}
+    },
+    {
+      "t": 1793208570302,
+      "iso": "2026-10-28T17:29:30.302Z",
+      "venue": "BIN_FUT",
+      "type": "FLOW_BURST",
+      "side": -1,
+      "mid": 80538.65,
+      "detail": {
+        "notionalUsd": 10792
+      }
+    },
+    {
+      "t": 1793208571701,
+      "iso": "2026-10-28T17:29:31.701Z",
+      "venue": "BIN_FUT",
+      "type": "FLOW_EXHAUST",
+      "side": -1,
+      "mid": 80538.65,
+      "detail": {}
+    },
+    {
+      "t": 1793208573314,
+      "iso": "2026-10-28T17:29:33.314Z",
+      "venue": "BIN_FUT",
+      "type": "FLOW_BURST",
+      "side": -1,
+      "mid": 80538.65,
+      "detail": {
+        "notionalUsd": 10551
+      }
+    },
+    {
+      "t": 1793208573314,
+      "iso": "2026-10-28T17:29:33.314Z",
+      "venue": "CROSS",
+      "type": "DUAL_FUT_SYNC_BURST",
+      "side": -1,
+      "mid": 80538.65,
+      "detail": {}
+    },
+    {
+      "t": 1793208574377,
+      "iso": "2026-10-28T17:29:34.377Z",
+      "venue": "CROSS",
+      "type": "DUAL_FUT_SYNC_BURST",
+      "side": -1,
+      "mid": 80538.65,
+      "detail": {}
+    },
+    {
+      "t": 1793208574790,
+      "iso": "2026-10-28T17:29:34.790Z",
+      "venue": "BIN_FUT",
+      "type": "FLOW_EXHAUST",
+      "side": -1,
+      "mid": 80538.65,
+      "detail": {}
+    },
+    {
+      "t": 1793208580460,
+      "iso": "2026-10-28T17:29:40.460Z",
+      "venue": "BIN_FUT",
+      "type": "FLOW_BURST",
+      "side": 1,
+      "mid": 80538.65,
+      "detail": {
+        "notionalUsd": 72324
+      }
+    },
+    {
+      "t": 1793208580779,
+      "iso": "2026-10-28T17:29:40.779Z",
+      "venue": "CROSS",
+      "type": "DUAL_FUT_SYNC_BURST",
+      "side": 1,
+      "mid": 80538.65,
+      "detail": {}
+    },
+    {
+      "t": 1793208581823,
+      "iso": "2026-10-28T17:29:41.823Z",
+      "venue": "CROSS",
+      "type": "DUAL_FUT_SYNC_BURST",
+      "side": 1,
+      "mid": 80538.65,
+      "detail": {}
+    }
+  ]
+}

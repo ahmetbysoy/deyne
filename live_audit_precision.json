@@ -1,0 +1,10 @@
+{
+  "completed10sTheses": 29,
+  "meanBps_Hold10s": 0.621,
+  "meanBps_SingleEventExit": 1.293,
+  "meanBps_CompositeDnaInvalidationExit": 0.715,
+  "singleEventTriggerRatePct": 48.3,
+  "singleEventFalseAlarmWinnersKilled": 4,
+  "compositeDnaTriggerRatePct": 37.9,
+  "compositeDnaFalseAlarmWinnersKilled": 5
+}

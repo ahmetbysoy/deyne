@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Market DNA V1 — Canlı Mikro-Yapı ve Olay Dizilimi Laboratuvarı</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Üst Durum Çubuğu -->
+    <header class="top-bar">
+      <div class="top-left">
+        <button id="quickCoinBtn" class="coin-pill" type="button" title="Coin Değiştir">
+          <span class="dna-glyph">🧬</span>
+          <span id="hdrSymbol">—</span>
+          <span class="caret">▾</span>
+        </button>
+        <span id="hdrSession" class="meta-chip">Oturum #—</span>
+      </div>
+      <div class="top-right">
+        <div class="price-readout">
+          <span id="hdrMid" class="mid-val">—</span>
+          <span id="hdrSpread" class="spread-val">— bps</span>
+        </div>
+        <div id="hdrFeedBadge" class="conn-badge" data-state="offline">
+          <i class="dot"></i>
+          <span id="hdrFeedText">Bağlanıyor</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- İlk Bakışta 4 Temel Soru: Ana DNA Durum Kartı (Piyasa ve DNA sekmelerinde sabit özet) -->
+    <section id="heroDnaCard" class="hero-card" data-badge="VERİ KOPUK">
+      <div class="hero-header">
+        <span class="hero-kicker">MARKET DNA KARAR DURUMU</span>
+        <span id="dnaStatusBadge" class="dna-badge" data-badge="VERİ KOPUK">VERİ KOPUK</span>
+      </div>
+      <h1 id="dnaHeadline" class="hero-headline">Canlı veri akışı başlatılıyor…</h1>
+      <p id="dnaExplanation" class="hero-sub">Gerçek borsa verileri doğrulanmadan sinyal üretilmez.</p>
+
+      <!-- Yalnızca MEZUN MOTİF AKTİF iken dolan 3-durumlu olasılık barı -->
+      <div id="activeSignalBox" class="signal-box hidden">
+        <div class="prob-grid">
+          <div class="prob-cell up">
+            <span class="prob-lbl">P(UP)</span>
+            <strong id="sigProbUp">—%</strong>
+          </div>
+          <div class="prob-cell flat">
+            <span class="prob-lbl">P(FLAT)</span>
+            <strong id="sigProbFlat">—%</strong>
+          </div>
+          <div class="prob-cell down">
+            <span class="prob-lbl">P(DOWN)</span>
+            <strong id="sigProbDown">—%</strong>
+          </div>
+        </div>
+        <div id="sigMetaLine" class="sig-meta-line"></div>
+      </div>
+
+      <!-- İlk Bakış 4. Soru: Tahmin Hangi Olayla Geçersizleşir? -->
+      <div class="invalidation-strip">
+        <span class="inv-title">Geçersizlik Koşulu:</span>
+        <span id="dnaInvalidationText" class="inv-body">Kanıtlanmış aktif tahmin yok — yalnızca gözlem kaydı tutuluyor.</span>
+      </div>
+
+      <!-- İlk Bakış 2. Soru: Market DNA Şu Anda Ne Görüyor? (Son Olay Zinciri Şeridi) -->
+      <div class="chain-ribbon-wrap">
+        <div class="ribbon-label-row">
+          <span>Canlı Olay Zinciri</span>
+          <span id="hdrRegimeTag" class="regime-tag">—</span>
+        </div>
+        <div id="liveChainRibbon" class="chain-ribbon">
+          <span class="empty-muted">Olay geçişi bekleniyor…</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sekme İçerikleri -->
+    <main class="tab-container">
+      <!-- SEKME 1: PİYASA -->
+      <section id="tab-market" class="tab-pane active" aria-label="Piyasa">
+        <div class="card">
+          <div class="card-title-row">
+            <h2>Piyasada Ne Oluyor? (Son 90 sn)</h2>
+            <span id="chartRangeLabel" class="mono-dim">—</span>
+          </div>
+          <canvas id="priceCanvas" class="price-canvas" height="120"></canvas>
+          <div class="metrics-grid-4">
+            <div class="stat-tile">
+              <span class="stat-lbl">15 sn Hacim</span>
+              <strong id="mktVol15s">—</strong>
+            </div>
+            <div class="stat-tile">
+              <span class="stat-lbl">Alıcı Payı (15s)</span>
+              <strong id="mktBuyShare">—</strong>
+            </div>
+            <div class="stat-tile">
+              <span class="stat-lbl">Mark–Spot Baz</span>
+              <strong id="mktBasis">—</strong>
+            </div>
+            <div class="stat-tile">
+              <span class="stat-lbl">Fonlama</span>
+              <strong id="mktFunding">—</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title-row">
+            <h2>Canlı Veri Kaynakları ve Saat Denetimi</h2>
+            <span id="venueCountLabel" class="mono-dim">0 kaynak</span>
+          </div>
+          <div id="venueCardsList" class="venue-list"></div>
+        </div>
+      </section>
+
+      <!-- SEKME 2: DNA -->
+      <section id="tab-dna" class="tab-pane" aria-label="DNA">
+        <div class="card">
+          <div class="card-title-row">
+            <h2>Açık Çoklu-Ufuk Epizotları (10s · 30s · 120s)</h2>
+            <span id="openEpBadge" class="mono-dim">0 açık</span>
+          </div>
+          <div id="openEpisodesList" class="stack-list">
+            <div class="empty-box">Henüz açık epizot yok.</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title-row">
+            <h2>Gözlemsel Olay Akışı (Kanıt Kayıtları)</h2>
+            <span id="eventCountBadge" class="mono-dim">0 olay</span>
+          </div>
+          <div id="dnaEventStream" class="event-stream-list"></div>
+        </div>
+      </section>
+
+      <!-- SEKME 3: LABORATUVAR -->
+      <section id="tab-lab" class="tab-pane" aria-label="Laboratuvar">
+        <div class="card">
+          <div class="card-title-row">
+            <h2>C+ Karantina Hunisi</h2>
+            <button id="toggleDictBtn" class="ghost-btn" type="button">Olay Sözlüğü</button>
+          </div>
+          <div class="funnel-grid">
+            <button class="funnel-pill active" data-filter="ALL" type="button">
+              <span>Tümü</span><strong id="fnAll">0</strong>
+            </button>
+            <button class="funnel-pill" data-filter="DISCOVERY" type="button">
+              <span>Keşif</span><strong id="fnDisc">0</strong>
+            </button>
+            <button class="funnel-pill" data-filter="INCUBATION" type="button">
+              <span>Kuluçka</span><strong id="fnInc">0</strong>
+            </button>
+            <button class="funnel-pill" data-filter="VALIDATION" type="button">
+              <span>Doğrulama</span><strong id="fnVal">0</strong>
+            </button>
+            <button class="funnel-pill grad" data-filter="GRADUATED" type="button">
+              <span>Mezun</span><strong id="fnGrad">0</strong>
+            </button>
+            <button class="funnel-pill warn" data-filter="QUARANTINED" type="button">
+              <span>Karantina/Budanan</span><strong id="fnQuar">0</strong>
+            </button>
+          </div>
+        </div>
+
+        <div id="dictPanel" class="card hidden">
+          <div class="card-title-row">
+            <h2>Atomik Gözlemsel Olay Sözlüğü (13 Atom)</h2>
+            <span class="mono-dim">Sıfır Yön Önyargısı</span>
+          </div>
+          <div id="dictEntries" class="stack-list"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-title-row">
+            <h2>Keşfedilen Motifler ve Yön Defterleri</h2>
+            <span id="labMotifCount" class="mono-dim">0 motif</span>
+          </div>
+          <div id="motifCardsList" class="stack-list"></div>
+        </div>
+      </section>
+
+      <!-- SEKME 4: HAFIZA -->
+      <section id="tab-memory" class="tab-pane" aria-label="Hafıza">
+        <div class="card">
+          <div class="card-title-row">
+            <h2>Kalıcı Coin Hafızası (B+ Disk Durumu)</h2>
+            <button id="manualFlushBtn" class="ghost-btn" type="button">Şimdi Kaydet</button>
+          </div>
+          <div id="memoryStatusGrid" class="kv-list"></div>
+          <div class="sub-header">Diskte Kayıtlı Coin Hafızaları</div>
+          <div id="storedCoinsBar" class="chip-row"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-title-row">
+            <h2>3-Durumlu Baz Model Yarışması (Prequential)</h2>
+            <span id="leakageBadge" class="ok-pill">Sızıntı: 0</span>
+          </div>
+          <p class="card-note">
+            Hiçbir baz model önceden kazanan ilan edilmez. Yalnızca sonuçlandıktan sonra güncellenen ileriye dönük Multinomial Brier skorları karşılaştırılır (düşük daha iyi).
+          </p>
+          <div id="baseModelTables" class="stack-list"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-title-row">
+            <h2>Sıkıştırma ve Denetim Sayaçları</h2>
+            <span class="mono-dim">Gerçek Akış</span>
+          </div>
+          <div id="compressionAuditList" class="kv-list"></div>
+        </div>
+      </section>
+
+      <!-- SEKME 5: AYARLAR -->
+      <section id="tab-settings" class="tab-pane" aria-label="Ayarlar">
+        <div class="card">
+          <div class="card-title-row">
+            <h2>Aktif Coin Seçimi (Tek Coin Derin Odak)</h2>
+          </div>
+          <p class="card-note">
+            Coin değiştirildiğinde mevcut coinin açık olay zinciri kapatılır, hafızası atomik olarak diske kaydedilir ve yeni coinin geçmiş hafızası yüklenir.
+          </p>
+          <div id="coinSelectorGrid" class="coin-grid"></div>
+          <form id="customCoinForm" class="custom-coin-row">
+            <input id="customCoinInput" type="text" placeholder="Örn: BTCUSDT, PEPEUSDT" maxlength="16" autocomplete="off" />
+            <button type="submit" class="primary-btn">Seç</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="card-title-row">
+            <h2>Arka Plan Kuluçkası</h2>
+          </div>
+          <label class="switch-row" for="bgIncubationToggle">
+            <div class="switch-copy">
+              <strong>Seçili Coini Arka Planda İzlemeye Devam Et</strong>
+              <span>Açık olduğunda tarayıcı kapansa bile Node.js sunucusu seçili tek coini izlemeyi ve doğrulamayı sürdürür. Kapalı olduğunda oturum zaman aşımında analiz duraklar ve hafıza diske kaydedilir.</span>
+            </div>
+            <input id="bgIncubationToggle" type="checkbox" />
+          </label>
+        </div>
+
+        <div class="card">
+          <div class="card-title-row">
+            <h2>Canlı Veri Kaynakları</h2>
+          </div>
+          <div class="source-toggles">
+            <label class="switch-row">
+              <div class="switch-copy">
+                <strong>Binance USDT-M Futures</strong>
+                <span>bookTicker + depth20@100ms + depth@100ms + trade + markPrice + forceOrder</span>
+              </div>
+              <input type="checkbox" data-source="BINANCE_FUT" checked />
+            </label>
+            <label class="switch-row">
+              <div class="switch-copy">
+                <strong>Binance Spot</strong>
+                <span>depth@100ms (REST snapshot senkronlu) + aggTrade</span>
+              </div>
+              <input type="checkbox" data-source="BINANCE_SPOT" checked />
+            </label>
+            <label class="switch-row">
+              <div class="switch-copy">
+                <strong>OKX USDT Perpetual Swap</strong>
+                <span>400-kademe books + trades (dinamik ctVal sözleşme doğrulamalı)</span>
+              </div>
+              <input type="checkbox" data-source="OKX_SWAP" checked />
+            </label>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Alt Navigasyon (5 Sekme) -->
+    <nav class="bottom-nav" aria-label="Ana Navigasyon">
+      <button class="nav-item active" data-tab="market" type="button">
+        <span class="nav-ico">◈</span>
+        <span>Piyasa</span>
+      </button>
+      <button class="nav-item" data-tab="dna" type="button">
+        <span class="nav-ico">🧬</span>
+        <span>DNA</span>
+      </button>
+      <button class="nav-item" data-tab="lab" type="button">
+        <span class="nav-ico">⬡</span>
+        <span>Laboratuvar</span>
+      </button>
+      <button class="nav-item" data-tab="memory" type="button">
+        <span class="nav-ico">▤</span>
+        <span>Hafıza</span>
+      </button>
+      <button class="nav-item" data-tab="settings" type="button">
+        <span class="nav-ico">⚙</span>
+        <span>Ayarlar</span>
+      </button>
+    </nav>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

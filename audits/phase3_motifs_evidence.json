@@ -1,0 +1,103 @@
+{
+  "verifiedAt": "2026-10-28T17:54:02.101Z",
+  "unit": {
+    "dataType": "SYNTHETIC_UNIT_TEST",
+    "assertionsPassed": [
+      "cross_venue_jitter_guard",
+      "session_gap_barrier_isolation",
+      "episodic_500ms_duplicate_suppression",
+      "concurrency_overlap_weighting",
+      "pending_horizon_integrity_invalidation",
+      "redundant_suffix_pruning"
+    ]
+  },
+  "live": {
+    "dataType": "LIVE_MARKET_EVIDENCE",
+    "symbol": "BTCUSDT",
+    "durationSec": 13,
+    "eventsEncoded": 26,
+    "motifsDiscovered": 53,
+    "openEpisodesCount": 53,
+    "resolved10sCount": 23,
+    "sampleMotifs": [
+      {
+        "motifId": "-BINANCE_FUT@WALL_SPAWN -> ~+WALL_SPAWN",
+        "lengthK": 2,
+        "suffixId": null,
+        "lifecycleState": "INCUBATION",
+        "totalTriggered": 1,
+        "clockSummary": {
+          "count": 1,
+          "meanSpanMs": 452,
+          "meanTrades": 6,
+          "meanVolumeUsd": 6951.32
+        }
+      },
+      {
+        "motifId": "+BINANCE_FUT@WALL_SPAWN -> ~+WALL_SPAWN",
+        "lengthK": 2,
+        "suffixId": null,
+        "lifecycleState": "INCUBATION",
+        "totalTriggered": 1,
+        "clockSummary": {
+          "count": 1,
+          "meanSpanMs": 452,
+          "meanTrades": 6,
+          "meanVolumeUsd": 6951.32
+        }
+      },
+      {
+        "motifId": "-OKX_SWAP@WALL_SPAWN -> ~+WALL_SPAWN",
+        "lengthK": 2,
+        "suffixId": null,
+        "lifecycleState": "INCUBATION",
+        "totalTriggered": 1,
+        "clockSummary": {
+          "count": 1,
+          "meanSpanMs": 92,
+          "meanTrades": 1,
+          "meanVolumeUsd": 161.66
+        }
+      },
+      {
+        "motifId": "-BINANCE_FUT@WALL_SPAWN -> ~-OKX_SWAP@WALL_SPAWN -> ~+WALL_SPAWN",
+        "lengthK": 3,
+        "suffixId": "-OKX_SWAP@WALL_SPAWN -> ~+WALL_SPAWN",
+        "lifecycleState": "INCUBATION",
+        "totalTriggered": 1,
+        "clockSummary": {
+          "count": 1,
+          "meanSpanMs": 544,
+          "meanTrades": 7,
+          "meanVolumeUsd": 7112.98
+        }
+      },
+      {
+        "motifId": "+OKX_SWAP@WALL_SPAWN -> ~+WALL_SPAWN",
+        "lengthK": 2,
+        "suffixId": null,
+        "lifecycleState": "INCUBATION",
+        "totalTriggered": 1,
+        "clockSummary": {
+          "count": 1,
+          "meanSpanMs": 92,
+          "meanTrades": 1,
+          "meanVolumeUsd": 161.66
+        }
+      },
+      {
+        "motifId": "+BINANCE_FUT@WALL_SPAWN -> ~+OKX_SWAP@WALL_SPAWN -> ~+WALL_SPAWN",
+        "lengthK": 3,
+        "suffixId": "+OKX_SWAP@WALL_SPAWN -> ~+WALL_SPAWN",
+        "lifecycleState": "INCUBATION",
+        "totalTriggered": 1,
+        "clockSummary": {
+          "count": 1,
+          "meanSpanMs": 544,
+          "meanTrades": 7,
+          "meanVolumeUsd": 7112.98
+        }
+      }
+    ]
+  }
+}

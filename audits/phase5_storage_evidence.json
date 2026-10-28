@@ -1,0 +1,23 @@
+{
+  "verifiedAt": "2026-10-28T18:02:15.192Z",
+  "corruptionAndCrashRecovery": {
+    "existed": true,
+    "loadedFrom": "BACKUP_FALLBACK",
+    "corruptionDetected": true,
+    "corruptionReason": "Expected property name or '}' in JSON at position 54",
+    "corruptJsonlLinesSkipped": 1,
+    "gapMs": 28800001,
+    "stalenessLevel": "STALE_LONG_GAP",
+    "warmUpEpisodesAssigned": 4
+  },
+  "liveCoinSwitchContinuity": {
+    "btcEventsBeforeSwitch": 66,
+    "solEventsRecorded": 9,
+    "resumedBtcSessionNumber": 2,
+    "storedCoinsOnDisk": [
+      "BTCUSDT",
+      "SOLUSDT"
+    ],
+    "idlePauseWhenBackgroundOffVerified": true
+  }
+}

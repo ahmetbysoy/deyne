@@ -1,0 +1,18 @@
+{
+  "verifiedAt": "2026-10-28T18:11:10.660Z",
+  "staticAssets": {
+    "htmlBytes": 12357,
+    "cssBytes": 14987,
+    "jsBytes": 25121,
+    "zeroHardcodedLocalhostInFrontend": true,
+    "fiveRequiredTabsPresent": true,
+    "backgroundIncubationTogglePresent": true
+  },
+  "liveSseFramesReceivedIn4500ms": 16,
+  "liveDecisionBadge": "MOTİF KEŞFEDİLDİ",
+  "coinSwitchRoundtripVerified": [
+    "ETHUSDT",
+    "BTCUSDT"
+  ],
+  "manualDiskFlushChecksumPrefix": "a8e7a5fb22ee315f"
+}

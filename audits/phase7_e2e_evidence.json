@@ -1,0 +1,121 @@
+{
+  "verifiedAt": "2026-10-28T18:15:27.072Z",
+  "e2eChecks": {
+    "threeVenueLiveSyncVerified": true,
+    "forcedWsDisconnectEmittedReset": true,
+    "autoReconnectToLiveVerified": true,
+    "coinSwitchIsolationVerified": {
+      "ethMidObserved": 2343.615,
+      "ethOkxCtVal": 0.1,
+      "btcResumedSessionAfterSwitch": 2
+    },
+    "coldServerRestartVerified": {
+      "resumedSessionNumber": 3,
+      "loadedFrom": "PRIMARY",
+      "sessionGapInjected": true,
+      "persistedMotifCount": 215,
+      "storedCoins": [
+        "BTCUSDT",
+        "ETHUSDT"
+      ]
+    },
+    "dataLeakageAudit": {
+      "leakageChecksPassed": 3093,
+      "leakageViolationsDetected": 0
+    },
+    "continuousLiveServerSnapshot": {
+      "activeSymbol": "BTCUSDT",
+      "mid": 80736.05,
+      "spreadBps": 0.012,
+      "decisionBadge": "MOTİF KEŞFEDİLDİ",
+      "lifecycleCounts": {
+        "DISCOVERY": 216,
+        "INCUBATION": 2731,
+        "VALIDATION": 0,
+        "GRADUATED": 0,
+        "QUARANTINED": 0,
+        "RETIRED": 0
+      },
+      "compressionStats": {
+        "l2BookPacketsProcessed": 12068,
+        "tradePacketsProcessed": 26740,
+        "naive500msActiveTokens": 542,
+        "naive500msRedundantPct": 76.6,
+        "cleanTransitionEvents": 1309,
+        "retestEventsPreserved": 656,
+        "barrierEventsEmitted": 13,
+        "l2PacketsPerEvent": 9.22,
+        "activeTicksPerEvent": 0.41
+      },
+      "resolvedEpisodesCount": 1588,
+      "baseModelHorizon10s": {
+        "empiricalDistribution": [
+          26.9,
+          49.3,
+          23.9
+        ],
+        "activeLeader": "fixed_train",
+        "scoreboard": {
+          "fixed_train": {
+            "n": 55,
+            "weightedN": 27.5,
+            "meanBrier": 0.654,
+            "meanLogLoss": 1.0873
+          },
+          "short_ewma": {
+            "n": 55,
+            "weightedN": 27.5,
+            "meanBrier": 0.6935,
+            "meanLogLoss": 1.1636
+          },
+          "long_ewma": {
+            "n": 55,
+            "weightedN": 27.5,
+            "meanBrier": 0.655,
+            "meanLogLoss": 1.0831
+          },
+          "decoupled_regime": {
+            "n": 55,
+            "weightedN": 27.5,
+            "meanBrier": 0.6549,
+            "meanLogLoss": 1.0874
+          }
+        }
+      },
+      "baseModelHorizon30s": {
+        "empiricalDistribution": [
+          25.9,
+          33.3,
+          40.7
+        ],
+        "activeLeader": "long_ewma",
+        "scoreboard": {
+          "fixed_train": {
+            "n": 45,
+            "weightedN": 7.5,
+            "meanBrier": 0.6739,
+            "meanLogLoss": 1.113
+          },
+          "short_ewma": {
+            "n": 45,
+            "weightedN": 7.5,
+            "meanBrier": 0.6863,
+            "meanLogLoss": 1.1341
+          },
+          "long_ewma": {
+            "n": 45,
+            "weightedN": 7.5,
+            "meanBrier": 0.6675,
+            "meanLogLoss": 1.0999
+          },
+          "decoupled_regime": {
+            "n": 45,
+            "weightedN": 7.5,
+            "meanBrier": 0.6911,
+            "meanLogLoss": 1.1343
+          }
+        }
+      }
+    }
+  }
+}

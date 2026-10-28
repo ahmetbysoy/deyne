@@ -1,0 +1,160 @@
+{
+  "verifiedAt": "2026-10-28T17:45:46.738Z",
+  "zeroLeakedCrossCoinPackets": true,
+  "btcSnapshot": {
+    "symbol": "BTCUSDT",
+    "running": true,
+    "startedAt": 1793209528181,
+    "enabledSources": {
+      "BINANCE_FUT": true,
+      "BINANCE_SPOT": true,
+      "OKX_SWAP": true
+    },
+    "integrity": {
+      "ok": true,
+      "label": "OK",
+      "liveVenues": 3
+    },
+    "venues": {
+      "BINANCE_FUT": {
+        "venue": "BINANCE_FUT",
+        "symbol": "BTCUSDT",
+        "status": "LIVE",
+        "synced": true,
+        "bookLevels": {
+          "bids": 393,
+          "asks": 300
+        },
+        "bbo": {
+          "bid": 80722.4,
+          "bidQty": 14.236,
+          "ask": 80722.5,
+          "askQty": 1.672,
+          "u": 11948927763073,
+          "ts": 1793209536002.5,
+          "rxTs": 1793209536217
+        },
+        "mark": {
+          "markPrice": 80722.4,
+          "indexPrice": 80741.37543478,
+          "fundingRate": 0.0001,
+          "nextFundingTime": 1793232000000,
+          "ts": 1793209535834.5
+        },
+        "counters": {
+          "bookTicker": 7639,
+          "depth20": 74,
+          "depthDiff": 74,
+          "trade": 404,
+          "aggTradeMarketStream": 147,
+          "markPrice": 8,
+          "forceOrder": 0,
+          "ignoredNonMarketTrades": 2,
+          "malformedPackets": 0,
+          "sequenceGaps": 0,
+          "reconnects": 0
+        },
+        "clock": {
+          "venue": "BINANCE_FUT",
+          "samples": 8348,
+          "rttMs": 296.99,
+          "restClockSkewMs": -166.5,
+          "meanDeliveryLagMs": 50.01,
+          "minDeliveryLagMs": 47,
+          "jitterStdMs": 14.55,
+          "outOfOrderCount": 522,
+          "lastLocalRxTs": 1793209536217
+        }
+      },
+      "BINANCE_SPOT": {
+        "venue": "BINANCE_SPOT",
+        "symbol": "BTCUSDT",
+        "spotSymbol": "BTCUSDT",
+        "status": "LIVE",
+        "synced": true,
+        "bookLevels": {
+          "bids": 385,
+          "asks": 377
+        },
+        "counters": {
+          "depthDiff": 72,
+          "aggTrade": 152,
+          "snapshotsSynced": 1,
+          "sequenceGaps": 0,
+          "malformedPackets": 0,
+          "reconnects": 0
+        },
+        "clock": {
+          "venue": "BINANCE_SPOT",
+          "samples": 224,
+          "rttMs": 297.8,
+          "restClockSkewMs": -144,
+          "meanDeliveryLagMs": 46.45,
+          "minDeliveryLagMs": 45,
+          "jitterStdMs": 1.41,
+          "outOfOrderCount": 0,
+          "lastLocalRxTs": 1793209536159
+        }
+      },
+      "OKX_SWAP": {
+        "venue": "OKX_SWAP",
+        "symbol": "BTCUSDT",
+        "instId": "BTC-USDT-SWAP",
+        "ctVal": 0.01,
+        "status": "LIVE",
+        "synced": true,
+        "bookLevels": {
+          "bids": 400,
+          "asks": 400
+        },
+        "counters": {
+          "bookSnapshots": 1,
+          "bookUpdates": 70,
+          "trades": 268,
+          "sequenceGaps": 0,
+          "malformedPackets": 0,
+          "reconnects": 0
+        },
+        "clock": {
+          "venue": "OKX_SWAP",
+          "samples": 339,
+          "rttMs": 156.6,
+          "restClockSkewMs": -29,
+          "meanDeliveryLagMs": 53.53,
+          "minDeliveryLagMs": 50,
+          "jitterStdMs": 5.4,
+          "outOfOrderCount": 0,
+          "lastLocalRxTs": 1793209536158
+        }
+      }
+    }
+  },
+  "btcReconnectVerified": {
+    "statusAfterReconnect": "LIVE",
+    "reconnectCount": 1,
+    "gapsRecorded": [
+      "ws_open_sync",
+      "okx_ws_open",
+      "spot_ws_open",
+      "book_ws_closed",
+      "ws_open_sync"
+    ]
+  },
+  "ethSwitchSnapshot": {
+    "symbol": "ETHUSDT",
+    "okxCtVal": 0.1,
+    "eventsReceived": {
+      "book": 212,
+      "trade": 482,
+      "bbo": 2467,
+      "mark": 6,
+      "gaps": [
+        "ws_open_sync",
+        "okx_ws_open",
+        "spot_ws_open"
+      ]
+    },
+    "crossVenueUncertaintyMs_FutVsOkx": 33.6,
+    "crossVenueUncertaintyMs_FutVsSpot": 33.6
+  }
+}

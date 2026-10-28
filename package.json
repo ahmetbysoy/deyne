@@ -1,0 +1,16 @@
+{
+  "name": "dna-lab",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "verify:e2e": "node tests/verify_phase7_e2e.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "ws": "^8.22.0"
+  }
+}

@@ -1,0 +1,8 @@
+node_modules/
+data/
+out/
+.env
+.env.*
+*erisim*.json
+*.tmp.*
+.DS_Store

@@ -1,0 +1,150 @@
+{
+  "verifiedAt": "2026-10-28T17:59:28.046Z",
+  "unit": {
+    "dataType": "SYNTHETIC_UNIT_TEST",
+    "assertionsPassed": [
+      "multi_horizon_deadzone_scaling",
+      "neff_concurrency_vs_serial_vs_small_sample",
+      "runtime_data_leakage_blocker",
+      "bh_fdr_noise_rejection_across_multiple_hypotheses",
+      "walk_forward_graduation_and_automatic_quarantine_demotion"
+    ]
+  },
+  "live": {
+    "dataType": "LIVE_MARKET_EVIDENCE",
+    "symbol": "BTCUSDT",
+    "durationSec": 14,
+    "graduatedMotifsCount": 0,
+    "decisionCard": {
+      "badge": "MOTİF KEŞFEDİLDİ",
+      "silent": true,
+      "headline": "Yeni olay dizilimi kaydedildi: +OKX_SWAP@WALL_TEST -> +OKX_SWAP@WALL_HOLD -> +WALL_SPAWN:R -> +WALL_TEST",
+      "explanation": "Keşif aşamasında yön iddiası yoktur; 10s / 30s / 120s sonuç pencereleri izleniyor.",
+      "activeSignal": null,
+      "lifecycleCounts": {
+        "DISCOVERY": 115,
+        "INCUBATION": 32,
+        "VALIDATION": 0,
+        "GRADUATED": 0,
+        "QUARANTINED": 0,
+        "RETIRED": 0
+      },
+      "lastMotif": {
+        "motifId": "+OKX_SWAP@WALL_TEST -> +OKX_SWAP@WALL_HOLD -> +WALL_SPAWN:R -> +WALL_TEST",
+        "episodeId": "ep_BTCUSDT_148",
+        "lifecycleState": "DISCOVERY",
+        "stateReason": "Yeni keşfedildi — ilk bağımsız sonuç gözlemleri bekleniyor.",
+        "ts": 1793210367170
+      }
+    },
+    "baseModelAudit": {
+      "symbol": "BTCUSDT",
+      "leakageChecksPassed": 189,
+      "leakageViolationsDetected": 0,
+      "horizons": {
+        "10": {
+          "empiricalDistribution": [
+            30.8,
+            38.5,
+            30.8
+          ],
+          "activeLeader": "fixed_train",
+          "scoreboard": {
+            "fixed_train": {
+              "n": 1,
+              "weightedN": 0.5,
+              "meanBrier": 0.6667,
+              "meanLogLoss": 1.0986
+            },
+            "short_ewma": {
+              "n": 1,
+              "weightedN": 0.5,
+              "meanBrier": 0.6667,
+              "meanLogLoss": 1.0986
+            },
+            "long_ewma": {
+              "n": 1,
+              "weightedN": 0.5,
+              "meanBrier": 0.6667,
+              "meanLogLoss": 1.0986
+            },
+            "decoupled_regime": {
+              "n": 1,
+              "weightedN": 0.5,
+              "meanBrier": 0.4537,
+              "meanLogLoss": 0.7985
+            }
+          }
+        },
+        "30": {
+          "empiricalDistribution": [
+            33.3,
+            33.3,
+            33.3
+          ],
+          "activeLeader": "fixed_train",
+          "scoreboard": {
+            "fixed_train": {
+              "n": 0,
+              "weightedN": 0,
+              "meanBrier": null,
+              "meanLogLoss": null
+            },
+            "short_ewma": {
+              "n": 0,
+              "weightedN": 0,
+              "meanBrier": null,
+              "meanLogLoss": null
+            },
+            "long_ewma": {
+              "n": 0,
+              "weightedN": 0,
+              "meanBrier": null,
+              "meanLogLoss": null
+            },
+            "decoupled_regime": {
+              "n": 0,
+              "weightedN": 0,
+              "meanBrier": null,
+              "meanLogLoss": null
+            }
+          }
+        },
+        "120": {
+          "empiricalDistribution": [
+            33.3,
+            33.3,
+            33.3
+          ],
+          "activeLeader": "fixed_train",
+          "scoreboard": {
+            "fixed_train": {
+              "n": 0,
+              "weightedN": 0,
+              "meanBrier": null,
+              "meanLogLoss": null
+            },
+            "short_ewma": {
+              "n": 0,
+              "weightedN": 0,
+              "meanBrier": null,
+              "meanLogLoss": null
+            },
+            "long_ewma": {
+              "n": 0,
+              "weightedN": 0,
+              "meanBrier": null,
+              "meanLogLoss": null
+            },
+            "decoupled_regime": {
+              "n": 0,
+              "weightedN": 0,
+              "meanBrier": null,
+              "meanLogLoss": null
+            }
+          }
+        }
+      }
+    }
+  }
+}

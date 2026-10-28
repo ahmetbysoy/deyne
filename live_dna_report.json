@@ -1,0 +1,423 @@
+{
+  "meta": {
+    "durationSec": 75,
+    "streamCount": 12,
+    "capturedAt": "2026-10-28T15:44:53.901Z"
+  },
+  "streamSummary": [
+    {
+      "id": "BIN:BTCUSDT",
+      "depthUpdates": 740,
+      "trades": 303,
+      "cleanEvents": 53,
+      "episodes": 96,
+      "resets": 1
+    },
+    {
+      "id": "BIN:ETHUSDT",
+      "depthUpdates": 715,
+      "trades": 152,
+      "cleanEvents": 18,
+      "episodes": 33,
+      "resets": 1
+    },
+    {
+      "id": "BIN:SOLUSDT",
+      "depthUpdates": 557,
+      "trades": 55,
+      "cleanEvents": 15,
+      "episodes": 27,
+      "resets": 1
+    },
+    {
+      "id": "BIN:XRPUSDT",
+      "depthUpdates": 499,
+      "trades": 49,
+      "cleanEvents": 14,
+      "episodes": 24,
+      "resets": 1
+    },
+    {
+      "id": "BIN:DOGEUSDT",
+      "depthUpdates": 350,
+      "trades": 30,
+      "cleanEvents": 13,
+      "episodes": 23,
+      "resets": 1
+    },
+    {
+      "id": "BIN:SUIUSDT",
+      "depthUpdates": 374,
+      "trades": 28,
+      "cleanEvents": 17,
+      "episodes": 30,
+      "resets": 1
+    },
+    {
+      "id": "OKX:BTC-USDT-SWAP",
+      "depthUpdates": 733,
+      "trades": 144,
+      "cleanEvents": 57,
+      "episodes": 101,
+      "resets": 1
+    },
+    {
+      "id": "OKX:ETH-USDT-SWAP",
+      "depthUpdates": 740,
+      "trades": 466,
+      "cleanEvents": 28,
+      "episodes": 48,
+      "resets": 1
+    },
+    {
+      "id": "OKX:SOL-USDT-SWAP",
+      "depthUpdates": 723,
+      "trades": 61,
+      "cleanEvents": 18,
+      "episodes": 33,
+      "resets": 1
+    },
+    {
+      "id": "OKX:XRP-USDT-SWAP",
+      "depthUpdates": 678,
+      "trades": 59,
+      "cleanEvents": 16,
+      "episodes": 29,
+      "resets": 1
+    },
+    {
+      "id": "OKX:DOGE-USDT-SWAP",
+      "depthUpdates": 648,
+      "trades": 40,
+      "cleanEvents": 17,
+      "episodes": 29,
+      "resets": 1
+    },
+    {
+      "id": "OKX:SUI-USDT-SWAP",
+      "depthUpdates": 587,
+      "trades": 38,
+      "cleanEvents": 19,
+      "episodes": 33,
+      "resets": 1
+    }
+  ],
+  "test1_stutteringVsTransition": {
+    "totalL2DepthPackets": 7344,
+    "totalTradePackets": 1425,
+    "naiveActiveTickTokens": 1457,
+    "naiveRedundantOrPingPongPct": 87,
+    "cleanStateTransitionEvents": 285,
+    "compressionRatioL2ToDna": 25.8
+  },
+  "test2_threeStateBaseRates": {
+    "5s": {
+      "nTicks": 1658,
+      "pUpPct": 13.7,
+      "pFlatDeadZonePct": 66,
+      "pDownPct": 20.3,
+      "upGivenMovedPct": 40.3
+    },
+    "10s": {
+      "nTicks": 1538,
+      "pUpPct": 12,
+      "pFlatDeadZonePct": 67,
+      "pDownPct": 21,
+      "upGivenMovedPct": 36.4
+    },
+    "20s": {
+      "nTicks": 1298,
+      "pUpPct": 3.8,
+      "pFlatDeadZonePct": 70.4,
+      "pDownPct": 25.8,
+      "upGivenMovedPct": 12.8
+    }
+  },
+  "test3_sampleInflation": {
+    "5s": {
+      "rawResolvedCount": 1658,
+      "effectiveSampleSizeNeff": 161.5,
+      "inflationFactor": 10.3,
+      "lag1MoveAutocorr": 0.913
+    },
+    "10s": {
+      "rawResolvedCount": 1538,
+      "effectiveSampleSizeNeff": 84.7,
+      "inflationFactor": 18.2,
+      "lag1MoveAutocorr": 0.954
+    },
+    "20s": {
+      "rawResolvedCount": 1298,
+      "effectiveSampleSizeNeff": 43.4,
+      "inflationFactor": 29.9,
+      "lag1MoveAutocorr": 0.944
+    }
+  },
+  "test4_orderAsymmetry": [
+    {
+      "forward": "+MICRO_FLIP -> +FLOW_BURST",
+      "nForward": 20,
+      "meanAnchorBpsForward": 0.15,
+      "followThroughPctForward": 40,
+      "reversed": "+FLOW_BURST -> +MICRO_FLIP",
+      "nReversed": 6,
+      "meanAnchorBpsReversed": 0.96,
+      "followThroughPctReversed": 83.3,
+      "orderSpreadBps": 0.81
+    },
+    {
+      "forward": "+BOOK_TILT -> +MICRO_FLIP",
+      "nForward": 4,
+      "meanAnchorBpsForward": 0.31,
+      "followThroughPctForward": 75,
+      "reversed": "+MICRO_FLIP -> +BOOK_TILT",
+      "nReversed": 8,
+      "meanAnchorBpsReversed": 0.63,
+      "followThroughPctReversed": 62.5,
+      "orderSpreadBps": 0.32
+    },
+    {
+      "forward": "+MICRO_FLIP -> +FLOW_EXHAUST",
+      "nForward": 6,
+      "meanAnchorBpsForward": 0.2,
+      "followThroughPctForward": 33.3,
+      "reversed": "+FLOW_EXHAUST -> +MICRO_FLIP",
+      "nReversed": 11,
+      "meanAnchorBpsReversed": 0.39,
+      "followThroughPctReversed": 45.5,
+      "orderSpreadBps": 0.19
+    },
+    {
+      "forward": "+WALL_SPAWN -> +WALL_PULL",
+      "nForward": 5,
+      "meanAnchorBpsForward": -0.14,
+      "followThroughPctForward": 20,
+      "reversed": "+WALL_PULL -> +WALL_SPAWN",
+      "nReversed": 6,
+      "meanAnchorBpsReversed": -0.12,
+      "followThroughPctReversed": 0,
+      "orderSpreadBps": 0.02
+    }
+  ],
+  "test4_sameLinearDifferentDna": [
+    {
+      "stream": "BIN:SUIUSDT",
+      "linearScoreA": 0.33,
+      "dnaA": "[BULL] +FLOW_BURST -> +FLOW_EXHAUST -> +MICRO_FLIP",
+      "move10BpsA": 3.23,
+      "linearScoreB": 0.345,
+      "dnaB": "[BULL] +MICRO_FLIP -> -MICRO_FLIP -> +MICRO_FLIP",
+      "move10BpsB": -3.23,
+      "outcomeDivergenceBps": 6.47
+    },
+    {
+      "stream": "BIN:SUIUSDT",
+      "linearScoreA": 0.33,
+      "dnaA": "[BULL] +FLOW_BURST -> +FLOW_EXHAUST -> +MICRO_FLIP",
+      "move10BpsA": 3.23,
+      "linearScoreB": 0.345,
+      "dnaB": "[BULL] +MICRO_FLIP -> -MICRO_FLIP -> +MICRO_FLIP",
+      "move10BpsB": -3.23,
+      "outcomeDivergenceBps": 6.47
+    },
+    {
+      "stream": "BIN:SUIUSDT",
+      "linearScoreA": 0.25,
+      "dnaA": "[BULL] +MICRO_FLIP -> -MICRO_FLIP -> +FLOW_BURST",
+      "move10BpsA": 2.16,
+      "linearScoreB": 0.265,
+      "dnaB": "[BEAR] -FLOW_EXHAUST -> -MICRO_FLIP -> +MICRO_FLIP",
+      "move10BpsB": -3.23,
+      "outcomeDivergenceBps": 5.39
+    },
+    {
+      "stream": "BIN:SUIUSDT",
+      "linearScoreA": 0.251,
+      "dnaA": "[BULL] +MICRO_FLIP -> -MICRO_FLIP -> +FLOW_BURST",
+      "move10BpsA": 2.16,
+      "linearScoreB": 0.265,
+      "dnaB": "[BEAR] -FLOW_EXHAUST -> -MICRO_FLIP -> +MICRO_FLIP",
+      "move10BpsB": -3.23,
+      "outcomeDivergenceBps": 5.39
+    },
+    {
+      "stream": "BIN:SUIUSDT",
+      "linearScoreA": 0.289,
+      "dnaA": "[BULL] +FLOW_BURST -> +FLOW_EXHAUST -> +MICRO_FLIP",
+      "move10BpsA": 2.16,
+      "linearScoreB": 0.278,
+      "dnaB": "[BEAR] -FLOW_EXHAUST -> -MICRO_FLIP -> +MICRO_FLIP",
+      "move10BpsB": -3.23,
+      "outcomeDivergenceBps": 5.39
+    },
+    {
+      "stream": "BIN:SUIUSDT",
+      "linearScoreA": 0.287,
+      "dnaA": "[BULL] +FLOW_BURST -> +FLOW_EXHAUST -> +MICRO_FLIP",
+      "move10BpsA": 2.16,
+      "linearScoreB": 0.278,
+      "dnaB": "[BEAR] -FLOW_EXHAUST -> -MICRO_FLIP -> +MICRO_FLIP",
+      "move10BpsB": -3.23,
+      "outcomeDivergenceBps": 5.39
+    }
+  ],
+  "test5_threeClocks": {
+    "nTransitionsMeasured": 237,
+    "corr_dt_vs_dTrades": 0.534,
+    "corr_dt_vs_dVol": 0.468,
+    "corr_dTrades_vs_dVol": 0.646,
+    "corrWithNext5sAbsMove_dt": 0.178,
+    "corrWithNext5sAbsMove_dTrades": 0.007,
+    "corrWithNext5sAbsMove_dVol": 0.225,
+    "divergentClockSignatures": {
+      "fastLowCountHighVol_WhaleSweep": 5,
+      "fastHighCount_BotSwarm": 2,
+      "slowLowVol_PassiveBookDecay": 8
+    }
+  },
+  "test6_structuralInvalidation": {
+    "totalStoppedTheses": 0,
+    "caughtEarlyByStructureCount": 0,
+    "caughtEarlyPct": 0,
+    "medianLeadTimeMs": 0,
+    "medianSavedAdverseBps": 0
+  },
+  "test7_quarantineFunnel": {
+    "stage01_discoveredUniqueMotifs": 160,
+    "stage02_passedMinEffectiveSample": 15,
+    "stage03_passedChronologicalWalkForward": 7,
+    "rejectionRatePct": 95.6,
+    "topMotifLedgerExamples": [
+      {
+        "motif": "-MICRO_FLIP -> +MICRO_FLIP",
+        "k": 2,
+        "nRaw": 25,
+        "nEff": 21,
+        "trainFirstHalfBps": 0.65,
+        "walkForwardSecondHalfBps": 1.45,
+        "bullLedgerMeanBps": 0.37,
+        "bearLedgerMeanBps": 1.71,
+        "bullN": 12,
+        "bearN": 13,
+        "passedWalkForward": true
+      },
+      {
+        "motif": "-FLOW_EXHAUST -> +MICRO_FLIP",
+        "k": 2,
+        "nRaw": 12,
+        "nEff": 12,
+        "trainFirstHalfBps": 1.09,
+        "walkForwardSecondHalfBps": 0.76,
+        "bullLedgerMeanBps": 0.54,
+        "bearLedgerMeanBps": 1.47,
+        "bullN": 7,
+        "bearN": 5,
+        "passedWalkForward": true
+      },
+      {
+        "motif": "+FLOW_BURST -> +MICRO_FLIP",
+        "k": 2,
+        "nRaw": 6,
+        "nEff": 6,
+        "trainFirstHalfBps": 1.18,
+        "walkForwardSecondHalfBps": 0.75,
+        "bullLedgerMeanBps": 1.08,
+        "bearLedgerMeanBps": 0.91,
+        "bullN": 2,
+        "bearN": 4,
+        "passedWalkForward": true
+      },
+      {
+        "motif": "+MICRO_FLIP -> +BOOK_TILT",
+        "k": 2,
+        "nRaw": 8,
+        "nEff": 8,
+        "trainFirstHalfBps": 0.67,
+        "walkForwardSecondHalfBps": 0.58,
+        "bullLedgerMeanBps": 0.72,
+        "bearLedgerMeanBps": 0.62,
+        "bullN": 1,
+        "bearN": 7,
+        "passedWalkForward": true
+      },
+      {
+        "motif": "+MICRO_FLIP -> -MICRO_FLIP -> +MICRO_FLIP",
+        "k": 3,
+        "nRaw": 10,
+        "nEff": 8.3,
+        "trainFirstHalfBps": 0.43,
+        "walkForwardSecondHalfBps": 0.5,
+        "bullLedgerMeanBps": -0.36,
+        "bearLedgerMeanBps": 1.71,
+        "bullN": 6,
+        "bearN": 4,
+        "passedWalkForward": true
+      },
+      {
+        "motif": "+MICRO_FLIP -> +MICRO_FLIP",
+        "k": 2,
+        "nRaw": 6,
+        "nEff": 6,
+        "trainFirstHalfBps": 0.37,
+        "walkForwardSecondHalfBps": 0.42,
+        "bullLedgerMeanBps": null,
+        "bearLedgerMeanBps": 0.4,
+        "bullN": 0,
+        "bearN": 6,
+        "passedWalkForward": true
+      },
+      {
+        "motif": "-FLOW_BURST -> -FLOW_EXHAUST -> +MICRO_FLIP",
+        "k": 3,
+        "nRaw": 8,
+        "nEff": 8,
+        "trainFirstHalfBps": 1.3,
+        "walkForwardSecondHalfBps": 0.4,
+        "bullLedgerMeanBps": 0.09,
+        "bearLedgerMeanBps": 2.11,
+        "bullN": 5,
+        "bearN": 3,
+        "passedWalkForward": true
+      },
+      {
+        "motif": "+FLOW_BURST -> +FLOW_EXHAUST -> +MICRO_FLIP",
+        "k": 3,
+        "nRaw": 8,
+        "nEff": 8,
+        "trainFirstHalfBps": -0.08,
+        "walkForwardSecondHalfBps": 1.15,
+        "bullLedgerMeanBps": 0.36,
+        "bearLedgerMeanBps": 0.64,
+        "bullN": 3,
+        "bearN": 5,
+        "passedWalkForward": false
+      },
+      {
+        "motif": "+MICRO_FLIP -> +FLOW_BURST -> +FLOW_EXHAUST",
+        "k": 3,
+        "nRaw": 16,
+        "nEff": 15.1,
+        "trainFirstHalfBps": 0.11,
+        "walkForwardSecondHalfBps": -1.13,
+        "bullLedgerMeanBps": -0.88,
+        "bearLedgerMeanBps": -0.34,
+        "bullN": 5,
+        "bearN": 11,
+        "passedWalkForward": false
+      },
+      {
+        "motif": "-MICRO_FLIP -> +MICRO_FLIP -> +FLOW_BURST",
+        "k": 3,
+        "nRaw": 8,
+        "nEff": 7.5,
+        "trainFirstHalfBps": 0.13,
+        "walkForwardSecondHalfBps": 1,
+        "bullLedgerMeanBps": 0.57,
+        "bearLedgerMeanBps": 0.56,
+        "bullN": 3,
+        "bearN": 5,
+        "passedWalkForward": false
+      }
+    ]
+  }
+}

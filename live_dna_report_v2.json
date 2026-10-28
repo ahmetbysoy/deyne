@@ -1,0 +1,42 @@
+{
+  "structuralInvalidationAudit": {
+    "totalDirectionalThesesOpened": 199,
+    "currentHtml12BpsStopTriggeredCount": 0,
+    "realisticMicroStopTriggeredCount": 45,
+    "caughtEarlyByDnaStructureCount": 41,
+    "caughtEarlyByDnaStructurePct": 91.1,
+    "medianEarlyWarningLeadMs": 2509,
+    "medianSavedLossBps": 2.39,
+    "topInvalidatingEvents": {
+      "OPP:FLOW_BURST": 13,
+      "OPP:MICRO_FLIP": 22,
+      "OPP:MICRO_FLIP_RETEST": 2,
+      "OPP:BOOK_TILT": 2,
+      "OPP:WALL_SPAWN": 1,
+      "SAME:WALL_PULL": 1
+    }
+  },
+  "pstPruningAudit": {
+    "k3MotifsEvaluated": 8,
+    "k3KeptAddedNewInfoOverSuffix": 4,
+    "k3PrunedRedundantPct": 50
+  },
+  "outOfSampleWalkForwardTest": {
+    "nTestMovedSamples": 609,
+    "dnaSilenceRatePct": 69.1,
+    "dnaActiveRatePct": 30.9,
+    "allTicksBrier": {
+      "naive050": 0.25,
+      "rollingBaseRate": 0.5522,
+      "linearEngineV2": 0.244,
+      "dnaShadowWithBaseFallback": 0.5454
+    },
+    "whenDnaSpeaksOnlyBrier": {
+      "nActivePredictions": 188,
+      "rollingBaseRateBrier": 0.5479,
+      "linearEngineV2Brier": 0.2488,
+      "dnaShadowActiveBrier": 0.526,
+      "brierSkillScoreVsBasePct": 3.99
+    }
+  }
+}
