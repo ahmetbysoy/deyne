@@ -162,6 +162,14 @@ function createAppServer(options = {}) {
         return sendJson(res, 200, { ok: true, saveInfo: info });
       }
 
+      if (req.method === 'GET' && (pathname === '/orderbook-mobile.html' || pathname === '/orderbook')) {
+        const obmPath = path.join(__dirname, '..', 'orderbook-mobile.html');
+        if (fs.existsSync(obmPath)) {
+          res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-cache' });
+          return res.end(fs.readFileSync(obmPath));
+        }
+      }
+
       // Static frontend files (separated HTML, CSS, JS)
       const relPath = pathname === '/' ? 'index.html' : pathname.replace(/^\/+/, '');
       const safePath = path.normalize(path.join(publicDir, relPath));

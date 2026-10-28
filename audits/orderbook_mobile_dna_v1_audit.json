@@ -1,0 +1,268 @@
+{
+  "generatedAt": "2026-10-28T21:25:51.125Z",
+  "targetFile": "/home/user/dna-lab/orderbook-mobile.html",
+  "immutableUploadPreserved": true,
+  "all15AcceptanceTestsPassed": true,
+  "acceptanceTests": [
+    {
+      "id": 1,
+      "title": "Mevcut 4 sekmenin tamamı (Derinlik, Merdiven, Isı Haritası, Alış/Satış) bozulmadan çalışıyor",
+      "passed": true,
+      "detail": "4 sekme geçişi ve aria/hidden durumları doğrulandı"
+    },
+    {
+      "id": 2,
+      "title": "Saf Vadeli canlı veride SON İŞLEM (@trade tick-tick), ORTA FİYAT (@bookTicker), 24s Hacim (@ticker) ve tüm 4 sekme senkron akıyor",
+      "passed": true,
+      "detail": "Canlı BINANCE BTCUSDT: Son İşlem=81,325.20, Orta Fiyat=81,325.25 (fark=0.05 USDT), 24s Hacim=10.43B, Katalog=315 PARİTE"
+    },
+    {
+      "id": 3,
+      "title": "Sembol değişimi tüm geçici durumları sıfırlıyor ve eski zinciri yeni sembole taşımıyor",
+      "passed": true,
+      "detail": "BTCUSDT -> ETHUSDT geçişinde aktif zincir=0, açık epizot=0, BTC hafızası obm.dna.v1.BTCUSDT olarak korundu"
+    },
+    {
+      "id": 4,
+      "title": "Borsa yedeğine geçiş (Binance -> Bybit) eski zinciri kapatıyor ve Bybit orderbook.50 + publicTrade + allLiquidation işliyor",
+      "passed": true,
+      "detail": "9 sn failover sonrası Bybit akışı ve LIQ_SHORTS_SQUEEZE olayı doğrulandı"
+    },
+    {
+      "id": 5,
+      "title": "Veri kopması ve sıra boşluğunda RESET üretiliyor, eski zincir yeni olayla birleşmiyor",
+      "passed": true,
+      "detail": "RESET sayacı=1, aktif zincir uzunluğu=0"
+    },
+    {
+      "id": 6,
+      "title": "Aynı duvar var olmaya devam ederken her pakette tekrar BID_WALL_FORM üretilmiyor (kekeme engeli)",
+      "passed": true,
+      "detail": "8 ardışık derinlik paketinde tam olarak 1 adet BID_WALL_FORM üretildi"
+    },
+    {
+      "id": 7,
+      "title": "Aynı aktif motif epizodu açıkken her 500ms tick veya epizot içi tekrarda yeni tahmin açılmıyor",
+      "passed": true,
+      "detail": "500ms tick'lerde 0 ek epizot; aktif motif epizodu=1 kaldı (1 tekrar bastırıldı)"
+    },
+    {
+      "id": 8,
+      "title": "Her tahmin tekil predId kilidiyle yalnızca bir kez çözülüyor",
+      "passed": true,
+      "detail": "Çözülen geçerli tahmin sayısı=11, ardışık tick'lerde çift sayım=0"
+    },
+    {
+      "id": 9,
+      "title": "Ufuk içinde kopukluk olduğunda sonuç başarılı/başarısız değil BELİRSİZ (INDETERMINATE_GAP) işaretleniyor",
+      "passed": true,
+      "detail": "Belirsiz sayısı=14, isabet/hata sayacı değişmedi"
+    },
+    {
+      "id": 10,
+      "title": "Yeni keşfedilen ve yeterli kanıtı olmayan motif doğrulanmış sinyal gibi gösterilmiyor",
+      "passed": true,
+      "detail": "3 yeni motif NEW statüsünde ve COMPOSITIONAL_PRIOR etiketiyle ayrıldı"
+    },
+    {
+      "id": 11,
+      "title": "Yapısal geçersizlik gerçekleştiğinde tahmin geçersiz kılınıyor ve ufuk sonu sonucu ayrı denetleniyor",
+      "passed": true,
+      "detail": "11 iptal edilen tahmin ufuk sonunda INVALIDATED_AUDITED olarak denetlendi (kurtarılan zarar=0)"
+    },
+    {
+      "id": 12,
+      "title": "localStorage bozuk JSON veya kota aşımı (QuotaExceededError) durumunda uygulama çökmüyor",
+      "passed": true,
+      "detail": "CORRUPT_RECOVERED ve STORE_LIMIT_ERROR durumları çökmeden kurtarıldı"
+    },
+    {
+      "id": 13,
+      "title": "Saf Vadeli çoklu kanal (Futures Book/Trade + Market/Mark/Liq/Ticker) ve 4 bağımsız zamanlayıcı sızıntısız yönetiliyor",
+      "passed": true,
+      "detail": "Sembol değişimleri sonrası açık soket=0, Spot=0, 4 bağımsız zamanlayıcı aktif"
+    },
+    {
+      "id": 14,
+      "title": "Isı haritası sekmesi kapalıyken gereksiz DNA DOM çizimi yapılmıyor; sekme açıldığında tam güncelleniyor",
+      "passed": true,
+      "detail": "Gizli sekmede 0 DOM yazımı; sekme açılışında anında senkron render"
+    },
+    {
+      "id": 15,
+      "title": "Mobil dar ekran düzeni (360px), açılır çekmeceler ve temiz kod kuralları doğrulandı",
+      "passed": true,
+      "detail": "TODO/FIXME=0, Math.random=0, orijinal dosya korundu, @media 360px ve <details> çekmeceleri aktif"
+    }
+  ],
+  "liveRealStreamValidation": {
+    "durationSec": 36,
+    "symbol": "BTCUSDT",
+    "venue": "binance",
+    "wsMessagesReceived": 14439,
+    "partialBookMode": true,
+    "observableLevels": {
+      "bids": 20,
+      "asks": 20,
+      "spanBidBps": 0.3,
+      "spanAskBps": 0.45
+    },
+    "lastPriceText": "81,325.20",
+    "midText": "81,325.25",
+    "lastVsMidDiffUsd": 0.05,
+    "volume24hText": "10.43B",
+    "futuresCatalogHeader": "315 PARİTE",
+    "spreadBpsText": "0.01 bps",
+    "futuresTelemetryLive": {
+      "markPrice": 81327.58965517,
+      "indexPrice": 81372.62891304,
+      "fundingRate": 0.0001,
+      "markIndexBasisBps": -5.82,
+      "recentLiquidationsCount": 0,
+      "activeTimers": {
+        "eval150ms": true,
+        "resolve250ms": true,
+        "ui450ms": true,
+        "persist15s": true
+      },
+      "auxSockets": {
+        "futMarketOpen": true
+      }
+    },
+    "obmEngineV2": {
+      "ticks": 71,
+      "horizonSec": 38,
+      "resolvedOverlapping": 17,
+      "decisive": 0,
+      "brier": 0.069
+    },
+    "marketDnaV1": {
+      "atomicEventsObserved": 41,
+      "resetCount": 0,
+      "ignoredNonMarketTrades": 0,
+      "discoveredMotifsCount": 105,
+      "verifiedMotifsCount": 0,
+      "independentEpisodesOpened": 105,
+      "inEpisodeDuplicatesSuppressed": 12,
+      "resolvedValidEpisodes": 17,
+      "indeterminateGapCount": 0,
+      "structuralInvalidations": 43,
+      "shadowComparison": {
+        "pairedCount": 17,
+        "effectiveWeightSum": 0.429,
+        "dnaBrierSum": 0.09213525684055746,
+        "obmBrierSum": 0.0954419579422163,
+        "dnaDecisive": 0,
+        "dnaHits": 0,
+        "obmDecisive": 8,
+        "obmHits": 8
+      },
+      "sampleEvents": [
+        {
+          "type": "ASK_WALL_FORM",
+          "ts": 1793222742768,
+          "dtMs": 150,
+          "dTrades": 0,
+          "dVolUsd": 0,
+          "evidence": {
+            "wallPrice": 81325.3,
+            "notionalUsd": 723876,
+            "multMedian": 2966.9,
+            "sharePct": 97
+          }
+        },
+        {
+          "type": "BID_WALL_TEST",
+          "ts": 1793222742768,
+          "dtMs": 0,
+          "dTrades": 0,
+          "dVolUsd": 0,
+          "evidence": {
+            "wallPrice": 81325.2,
+            "distBps": 0.01,
+            "attackUsd": 186480,
+            "retest": false
+          }
+        },
+        {
+          "type": "TAKER_SELL_BURST",
+          "ts": 1793222742918,
+          "dtMs": 150,
+          "dTrades": 6,
+          "dVolUsd": 16183.71,
+          "evidence": {
+            "vol3sUsd": 189407,
+            "multBase": 2.63,
+            "sellSharePct": 99
+          }
+        },
+        {
+          "type": "ASK_WALL_PULL",
+          "ts": 1793222748188,
+          "dtMs": 5270,
+          "dTrades": 11,
+          "dVolUsd": 30090.32,
+          "evidence": {
+            "wallPrice": 81325.3,
+            "lostUsd": 280735,
+            "tradedNearUsd": 0,
+            "note": "gözlemsel_çekilme"
+          }
+        },
+        {
+          "type": "BID_WALL_HOLD",
+          "ts": 1793222748919,
+          "dtMs": 731,
+          "dTrades": 2,
+          "dVolUsd": 1382.53,
+          "evidence": {
+            "wallPrice": 81325.2,
+            "absorbedUsd": 60994,
+            "retainedPct": 84
+          }
+        },
+        {
+          "type": "BID_WALL_PULL",
+          "ts": 1793222749230,
+          "dtMs": 311,
+          "dTrades": 0,
+          "dVolUsd": 0,
+          "evidence": {
+            "wallPrice": 81325.2,
+            "lostUsd": 268454,
+            "tradedNearUsd": 20901,
+            "note": "gözlemsel_çekilme"
+          }
+        },
+        {
+          "type": "MICRO_SHIFT_DOWN",
+          "ts": 1793222749393,
+          "dtMs": 163,
+          "dTrades": 0,
+          "dVolUsd": 0,
+          "evidence": {
+            "microSkew": -0.84,
+            "topBidQty": 0.905,
+            "topAskQty": 10.656
+          }
+        },
+        {
+          "type": "ASK_WALL_FORM",
+          "ts": 1793222750744,
+          "dtMs": 1351,
+          "dTrades": 2,
+          "dVolUsd": 10490.95,
+          "evidence": {
+            "wallPrice": 81325.3,
+            "notionalUsd": 417605,
+            "multMedian": 2567.4,
+            "sharePct": 99
+          }
+        }
+      ],
+      "uiHeadline": "Gözlem Modu: MICRO_SHIFT_DOWN → ASK_WALL_FORM",
+      "uiStatusPill": "YENİ MOTİF · GÖZLEM",
+      "uiScopePill": "BTCUSDT · BINANCE+MARK/LIQ · 20-KADEME"
+    }
+  }
+}
